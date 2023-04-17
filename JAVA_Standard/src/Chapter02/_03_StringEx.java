@@ -3,6 +3,7 @@ package Chapter02;
 public class _03_StringEx {
 
 	public static void main(String[] args) {
+		// 마지막 페이지
 		String name = "Ja" + "va";
 		String str = name + 8.0;
 		
