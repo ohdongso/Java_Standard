@@ -1,6 +1,6 @@
-package Chapter02;
+package Chapter03;
 
-public class _17_OperatorEx2 {
+public class _02_OperatorEx2 {
 
 	public static void main(String[] args) {
 		int i = 5, j = 0;
