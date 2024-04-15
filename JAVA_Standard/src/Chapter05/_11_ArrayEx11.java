@@ -3,7 +3,6 @@ package Chapter05;
 public class _11_ArrayEx11 {
 	
 	// 입력받은 임의의 숫자에 해당하는 counter배열을 자릿수 카운터를 +1씩 해주는 알고리즘.
-	
 	public static void main(String[] args) {
 		int[] numArr = new int[10];
 		int[] counter = new int[10];
