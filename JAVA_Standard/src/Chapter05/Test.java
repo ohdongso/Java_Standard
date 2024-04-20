@@ -3,8 +3,9 @@ package Chapter05;
 public class Test {
 
 	public static void main(String[] args) {
-		System.out.println((char)(1 + '0'));
-		System.out.println((int)'0');
-		System.out.println((char)49);
+		double a = Math.random();
+		System.out.println(a);
+		System.out.println(a * 5);
+		System.out.println((int)(a * 5));
 	}
 }

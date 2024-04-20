@@ -2,7 +2,7 @@ package Chapter05;
 
 import java.util.Scanner;
 
-public class _20_ArrayEx20 {
+public class _20_MultiArrEx1 {
 	// 입력한 2차원 좌표의 위치에 X를 표시
 	
 	public static void main(String[] args) {
