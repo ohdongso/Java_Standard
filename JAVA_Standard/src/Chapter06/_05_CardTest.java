@@ -35,6 +35,9 @@ public class _05_CardTest {
 class Card {
 	String kind;
 	int number;
+	
+	// 클래스 변수선언
+	// Card클래스로 객체를 생성하면 해당 변수를 모든 객체가 공유한다.
 	static int width = 100;
 	static int height = 250;
 }
