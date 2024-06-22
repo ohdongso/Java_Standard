@@ -17,7 +17,7 @@ public class _38_InnerEx8 {
 				public void actionPerformed(ActionEvent e) {
 					System.out.println("ActionEvent occurred!!!");
 				}
-			} // 익명 클래스의 끝
+			} // 익명 클래스의 끝 
 		);
 	} // main의 끝
 } // InnerEx8의 끝
