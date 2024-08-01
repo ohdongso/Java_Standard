@@ -6,8 +6,6 @@ public class _14_StringEx4 {
 	/*	
 	 	join()은 여러 문자열 사이에 구분자를 넣어서 결합한다. 구분자로 문자열을 자르는
 	 	split()과 반대의 작업을 한다고 생각하면 이해하기 쉽다.
-	 	
-	 	
 	 */
 	public static void main(String[] args) {
 		String animals = "dong,cat,bear";
