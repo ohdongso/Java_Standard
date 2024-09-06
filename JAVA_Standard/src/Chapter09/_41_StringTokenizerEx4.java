@@ -19,6 +19,8 @@ public class _41_StringTokenizerEx4 {
 		long num = 0;
 		
 		final String NUMBER = "영일이삼사오육칠팔구";
+		
+		
 		final String UNIT = "십백천만억조";
 		final long[] UNIT_NUM = {10,100,1000,10000,(long)1e8,(long)1e12};
 		
@@ -26,11 +28,13 @@ public class _41_StringTokenizerEx4 {
 		
 		while(st.hasMoreTokens()) {
 			String token = st.nextToken();
+			// System.out.println("token : " + token);
 			int check = NUMBER.indexOf(token); // 숫자인지, 단위(UNIT)인지 확인한다.
+			// System.out.println("check : " + check);
 			
 			if(check == -1) { // 단위인 경우
 				if("만억조".indexOf(token) == -1) {
-					tmpResult += ( num != 0 ? num : 1) * UNIT_NUM[UNIT.indexOf(token)];
+					tmpResult += (num != 0 ? num : 1) * UNIT_NUM[UNIT.indexOf(token)];
 				} else {
 					tmpResult += num;
 					result += (tmpResult != 0 ? tmpResult : 1) * UNIT_NUM[UNIT.indexOf(token)];
