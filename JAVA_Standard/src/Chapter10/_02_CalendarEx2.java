@@ -18,34 +18,6 @@ public class _02_CalendarEx2 {
 		System.out.println("오늘(date2)은 " + toString(date2) + DAY_OF_WEEK[date2.get(Calendar.DAY_OF_WEEK)] + "요일입니다.");
 		
 		// 두 날짜간의 차이를 얻으려면, getTimeInmillis() 천분의 일초 단위로 변환해야한다.
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		long difference = (date2.getTimeInMillis() - date1.getTimeInMillis()) / 1000;
 		System.out.println("그날(date1)부터 지금(date2)까지 " + difference + "초가 지났습니다.");
 		System.out.println("일(day)로 계산하면 " + difference / (24*60*60) + "일입니다."); // 1일 = 24 * 60 * 60
