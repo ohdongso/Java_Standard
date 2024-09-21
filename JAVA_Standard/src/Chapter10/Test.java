@@ -1,8 +1,11 @@
 package Chapter10;
 
+import java.util.Calendar;
+
 public class Test {
 
 	public static void main(String[] args) {
-		System.out.println(580 % 60);
+		Calendar D = Calendar.getInstance();
+		System.out.println(Calendar.DATE);
 	}
 }
