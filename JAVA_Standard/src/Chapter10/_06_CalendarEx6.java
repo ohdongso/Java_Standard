@@ -11,7 +11,7 @@ public class _06_CalendarEx6 {
 	public static void main(String[] args) {
 		// System.out.println("args.length : " + args.length); (2024, 9)입력시 "2"
 		if(args.length != 2) {
-			System.out.println("Usage : java CalendarEx8 2024 9");
+			System.out.println("Usage : java CalendarEx6 2024 9");
 			return;
 		}
 		
