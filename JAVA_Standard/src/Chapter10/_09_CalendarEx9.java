@@ -5,31 +5,34 @@ public class _09_CalendarEx9 {
 		
 	 */
 	public static void main(String[] args) {
-		System.out.println("2014. 5. 31 :" + getDayOfWeek(2014, 5, 31));
-		System.out.println("2012. 6. 1 :" + getDayOfWeek(2012, 6, 1));
-		System.out.println("2014. 5. 1 - 2014.4.28 :" + dayDiff(2014, 5, 1, 2014, 4, 28));
-		
-		System.out.println("2015. 6. 29 :" + convertDateToDay(2015, 6, 29));
-		System.out.println("735778 : " + convertDayToDate(735778));
+		System.out.println("2014. 5. 31 :" + getDayOfWeek(2014, 5, 31)); // 지정한 날짜의 요일을 반환한다. 7(토)
+		System.out.println("2012. 6. 1 :" + getDayOfWeek(2012, 6, 1)); // 6(금)
+		System.out.println("2014. 5. 1 - 2014.4.28 :" + dayDiff(2014, 5, 1, 2014, 4, 28)); // 두 날짜간의 차이를 일단위로 반환한다.	
+		System.out.println("2015. 6. 29 :" + convertDateToDay(2015, 6, 29)); // 년월일을 입력받아서 일단위로 변환한다.
+		System.out.println("735778 : " + convertDayToDate(735778)); // 일단위의 값을 년월일의 형태의 문자열로 변환하여 반환한다.
 		
 	} // main
 	
 	// 각 달의 마지막 일
 	public static int[] endOfMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 	
+	// 매개변수 year가 윤년이면 true를 그렇지 않으면 false를 반환한다.
 	public static boolean isLeapYear(int year) {
 		return ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0));
 	}
 	
+	// 두 날짜간의 차이를 일단위로 반환한다.
 	public static int dayDiff(int y1, int m1, int d1, int y2, int m2, int d2) {
 		return convertDateToDay(y1, m1, d1) - convertDateToDay(y2, m2, d2);
 	}
 	
+	// 지정한 날짜의 요일을 반환한다.(1~7 => 1이 일요일)
 	public static int getDayOfWeek(int year, int month, int day) {
 		// 1~7의 값을 반환한다. 결과가 1이면 일요일이다.
 		return convertDateToDay(year, month, day) % 7 + 1;
 	}
 	
+	// 년월일을 입력받아서 일단위로 변환한다.
 	public static String convertDayToDate(int day) {
 		int year = 1;
 		int month = 0;
