@@ -20,23 +20,71 @@ public class _04_MyVector implements List {
 		this(10); // 크기를 지정하지 않으면 크기를 10으로 한다.
 	}
 	
-	// 최소한의 저장공간 ==> 여기서 부터
-	
-	
-	
-	
-	@Override
-	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+	// 최소한의 저장공간
+	public void ensureCapacity(int minCapacity) {
+		if(minCapacity - data.length > 0) {
+			setCapacity(minCapacity);
+		}
 	}
-
-	@Override
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
+	
+	private void setCapacity(int capacity) {
+		if(this.capacity == capacity) {
+			return; // 크기가 같으면 변경하지 않는다.
+		}
+		
+		Object[] tmp = new Object[capacity];
+		System.arraycopy(data, 0, tmp, 0, size);
+		data = tmp;
+		this.capacity = capacity;
+	}
+	
+	public void clear() {
+		for(int i = 0; i < size; i++) {
+			data[i] = null;
+		}
+		size = 0;
+	}
+	
+	public boolean remove(Object obj) {
+		for(int i = 0; i < size; i++) {
+			if(obj.equals(data[i])) {
+				remove(i);
+				return true;
+			}
+		}
 		return false;
 	}
-
+	
+	public void trimToSize() {
+		setCapacity(size);
+	}
+	
+	public Object[] toArray() {
+		Object[] result = new Object[size];
+		System.arraycopy(data, 0, result, 0, size);
+		
+		return result;
+	}
+	
+	public boolean add(Object obj) {
+		// 새로운 객체를 저장하기 전에 저장할 공간을 확보한다.
+		ensureCapacity(size + 1);
+		data[size++] = obj;
+		return true;
+	}
+	
+	public boolean isEmpty() { return size == 0; }
+	public int capacity() { return capacity; }
+	public int size() { return size; }
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	@Override
 	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
@@ -50,27 +98,9 @@ public class _04_MyVector implements List {
 	}
 
 	@Override
-	public Object[] toArray() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public Object[] toArray(Object[] a) {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	@Override
-	public boolean add(Object e) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean remove(Object o) {
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 	@Override
@@ -103,13 +133,8 @@ public class _04_MyVector implements List {
 		return false;
 	}
 
-	@Override
-	public void clear() {
-		// TODO Auto-generated method stub
-		
-	}
 
-	@Override
+
 	public Object get(int index) {
 		// TODO Auto-generated method stub
 		return null;
@@ -121,10 +146,9 @@ public class _04_MyVector implements List {
 		return null;
 	}
 
-	@Override
+	
 	public void add(int index, Object element) {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -162,7 +186,7 @@ public class _04_MyVector implements List {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	public static void main(String[] args) {
 		
 	} // main() 끝.
