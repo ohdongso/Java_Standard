@@ -73,18 +73,37 @@ public class _04_MyVector implements List {
 		return true;
 	}
 	
+	public Object get(int index) {
+		if(index < 0 || index >= size) {
+			throw new IndexOutOfBoundsException("범위를 벗어났습니다.");
+		}
+		return data[index];
+	}
+	
+	public Object remove(int index) {
+		Object oldObj = null;
+		
+		if(index < 0 || index >= size) {
+			throw new IndexOutOfBoundsException("범위를 벗어났습니다.");
+		}
+		oldObj = data[index];
+		
+		// 삭제하고자 하는 객체가 마지막 객체가 아니라면, 배열복사를 통해 빈자리를 채워줘야 한다.
+		if(index != size-1) {
+			System.arraycopy(data, index+1, data, index, size-index-1);
+		}
+		
+		// 마지막 데이터를 null로 한다. 배열은 0 부터 시작하므로  마지막 요소는 index가 size-1이다
+		data[size-1] = null;
+		size--;
+		return oldObj;
+	}
+	
 	public boolean isEmpty() { return size == 0; }
 	public int capacity() { return capacity; }
 	public int size() { return size; }
 	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	@Override
 	public boolean contains(Object o) {
 		// TODO Auto-generated method stub
@@ -133,13 +152,6 @@ public class _04_MyVector implements List {
 		return false;
 	}
 
-
-
-	public Object get(int index) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	@Override
 	public Object set(int index, Object element) {
 		// TODO Auto-generated method stub
@@ -151,11 +163,7 @@ public class _04_MyVector implements List {
 
 	}
 
-	@Override
-	public Object remove(int index) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public int indexOf(Object o) {
