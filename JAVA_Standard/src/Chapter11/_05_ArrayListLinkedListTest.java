@@ -1,6 +1,6 @@
 package Chapter11;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.LinkedList;
 import java.util.List;
 
@@ -12,8 +12,16 @@ public class _05_ArrayListLinkedListTest  {
 		LinkedList ll = new LinkedList();
 		
 		System.out.println("= 순차적으로 추가하기 =");
-		// System.out.println("=ArrayList :" + add1(a1));
-		System.out.println("= 순차적으로 추가하기 =");
+		System.out.println("ArrayList : " + add1(al));
+		System.out.println("LinkedList : " + add1(ll));
+		System.out.println();
+		System.out.println("= 중간에 추가하기 =");
+		System.out.println("ArrayList :" + add2(al));
+		System.out.println("ArrayList :" + add2(ll));
+		System.out.println();
+		System.out.println("= 순차적으로 삭제하기");
+		System.out.println("ArrayList :" + remove1(al));
+		System.out.println("LinkedList :" + remove2(ll));
 		
 		
 	} // main() 끝.
