@@ -6,7 +6,7 @@ import java.util.Stack;
 public class _10_ExpValidCheck {
 	
 	public static void main(String[] args) {
-		if(args.length != 1) {
+		if(args.length != 1) { // 입력받은 값이 1개가 아니면 종료된다.
 			System.out.println("Usage : java ExpValidCheck \"EXPRESSION\"");
 			System.out.println("Example : java ExpValidCheck \"((2+3)*1)+3\"");
 			System.exit(0);
