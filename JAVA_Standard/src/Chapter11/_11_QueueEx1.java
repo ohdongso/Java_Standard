@@ -18,7 +18,7 @@ public class _11_QueueEx1 {
 			try {
 				// 화면으로부터 라인단위로 입력받는다.
 				Scanner s = new Scanner(System.in);
-				String input = s.nextLine().trim();
+				String input = s.nextLine().trim(); // 공백제거하고 입력받는다.
 				
 				if("".equals(input)) {
 					continue;
@@ -39,7 +39,7 @@ public class _11_QueueEx1 {
 					LinkedList tmp = (LinkedList)q;
 					ListIterator it = tmp.listIterator();
 					
-					while(it.hasNext()) {
+					while(it.hasNext()) { // 선입선출
 						System.out.println(++i+"."+it.next());
 					}
 				} else {
@@ -54,7 +54,7 @@ public class _11_QueueEx1 {
 	
 	public static void sava(String input) {
 		// queue에 저장한다.
-		if(!"".equals(input)) {
+		if(!"".equals(input)) { // 입력받은 데이터가 공백이 아니면, 큐에 삽입
 			q.offer(input);
 		}
 		
