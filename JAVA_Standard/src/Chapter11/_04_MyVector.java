@@ -14,6 +14,8 @@ public class _04_MyVector implements List {
 		if(capacity < 0) {
 			throw new IllegalArgumentException("유효하지 않은 값입니다. :" + capacity);
 		}
+		this.capacity = capacity;
+		data = new Object[capacity];
 	}
 	
 	public _04_MyVector() {
@@ -163,8 +165,6 @@ public class _04_MyVector implements List {
 
 	}
 
-	
-
 	@Override
 	public int indexOf(Object o) {
 		// TODO Auto-generated method stub
@@ -195,8 +195,4 @@ public class _04_MyVector implements List {
 		return null;
 	}
 	
-	public static void main(String[] args) {
-		
-	} // main() 끝.
-
 }

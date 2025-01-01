@@ -1,6 +1,6 @@
 package Chapter11;
 
-import java.util.Iterator;
+import java.util.*;
 
 public class _16_MyVector2 extends _04_MyVector implements Iterator {
 	int cursor = 0;
