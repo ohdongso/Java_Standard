@@ -36,5 +36,19 @@ public class _18_ArraysEx {
 			System.out.println(new String(graph) + i);
 		}
 		
+		String[][] str2D = new String[][] {{"aaa","bbb"}, {"AAA", "BBB"}};
+		String[][] str2D2 = new String[][] {{"aaa", "bbb"}, {"AAA", "BBB"}};
+		
+		System.out.println(Arrays.equals(str2D, str2D2)); // false
+		System.out.println(Arrays.deepEquals(str2D, str2D2)); // true
+		
+		char[] chArr = {'A', 'D', 'C', 'B', 'E'};
+		
+		System.out.println("chArr=" + Arrays.toString(chArr));
+		System.out.println("index of B =" + Arrays.binarySearch(chArr, 'B'));
+		System.out.println("= After sorting =");
+		Arrays.sort(chArr);
+		System.out.println("chArr=" + Arrays.toString(chArr));
+		System.out.println("index of B =" + Arrays.binarySearch(chArr, 'B'));
 	}	
 }
