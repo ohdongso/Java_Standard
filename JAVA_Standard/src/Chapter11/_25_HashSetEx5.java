@@ -28,7 +28,31 @@ public class _25_HashSetEx5 {
 			}
 		}
 		
+		it = setA.iterator();
+		while(it.hasNext()) {
+			Object tmp = it.next();
+			if(!setB.contains(tmp)) {
+				setCha.add(tmp);
+			}
+		} // while문 끝.
 		
+		it = setA.iterator();
+		while(it.hasNext()) {
+			setHab.add(it.next());
+		}
 		
+		it = setA.iterator();
+		while(it.hasNext()) {
+			setHab.add(it.next());
+		}
+		
+		it = setB.iterator();
+		while(it.hasNext()) {
+			setHab.add(it.next());
+		}
+		
+		System.out.println("A ∩ B = " + setKyo);
+		System.out.println("A ∪ B = " + setHab);
+		System.out.println("A - B = " + setCha);
 	}
 }
