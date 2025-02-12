@@ -1,7 +1,12 @@
 package Chapter11;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 public class _34_TreeMapEx1 {
@@ -33,10 +38,36 @@ public class _34_TreeMapEx1 {
 		System.out.println();
 		
 		// map을 ArrayList로 변환한 다음에 Collections.sort()로 정렬
+		Set set = map.entrySet();
+		List list = new ArrayList(set); // ArrayList(Collection c)
 		
+		// static void sort(List list, Comparator c)
+		Collections.sort(list, new ValueComparator());
 		
+		it = list.iterator();
 		
+		System.out.println("= 값의 크기가 큰 순서로 정렬 =");
+		while(it.hasNext()) {
+			Map.Entry entry = (Map.Entry)it.next();
+			int value = ((Integer)entry.getValue()).intValue();
+			System.out.println(entry.getKey() + " : " + printBar('#', value) + " " + value);
+		}		
 	} // main의 끝.
+	
+	static class ValueComparator implements Comparator {
+		public int compare(Object o1, Object o2) {
+			if(o1 instanceof Map.Entry && o2 instanceof Map.Entry) {
+				Map.Entry e1 = (Map.Entry)o1;
+				Map.Entry e2 = (Map.Entry)o2;
+				
+				int v1 = ((Integer)e1.getValue()).intValue();
+				int v2 = ((Integer)e2.getValue()).intValue();
+	
+				return v2 - v1;
+			}
+			return -1;
+		}
+	}
 	
 	public static String printBar(char ch, int value) {
 		char[] bar = new char[value];
