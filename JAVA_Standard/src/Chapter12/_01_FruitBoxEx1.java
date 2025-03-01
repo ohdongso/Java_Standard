@@ -11,6 +11,14 @@ public class _01_FruitBoxEx1 {
 
 	public static void main(String[] args) {
 		Box<Fruit> fruitBox = new Box<Fruit>();
+		Box<Apple> appleBox = new Box<Apple>();
+		Box<Toy> toyBox = new Box<Toy>();
+		// Box<Grape> grapeBox = new Box<Apple>(); // 에러. 타입 불일치
+		
+		
+		
+		
+		
 		
 		
 	}
