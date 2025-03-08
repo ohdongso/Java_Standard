@@ -17,11 +17,19 @@ public class _02_FruitBoxEx2 {
 	public static void main(String[] args) {
 		
 		FruitBox1<Fruit1> fruitBox = new FruitBox1<Fruit1>();
-		// 여기서 부터
+		FruitBox1<Apple1> appleBox = new FruitBox1<Apple1>();
+		FruitBox1<Grape1> grapeBox = new FruitBox1<Grape1>();
 		
+		fruitBox.add(new Fruit1());
+		fruitBox.add(new Apple1());
+		fruitBox.add(new Grape1());
+		appleBox.add(new Apple1());
+		grapeBox.add(new Grape1());
 		
-	}
-	
+		System.out.println("fruitBox-" + fruitBox);
+		System.out.println("appleBox-" + appleBox);
+		System.out.println("grapeBox-" + grapeBox);
+	} // main
 }
 
 class FruitBox1<T extends Fruit1 & Eatable> extends Box1<T> {}
