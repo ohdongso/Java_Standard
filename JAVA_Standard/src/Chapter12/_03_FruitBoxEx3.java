@@ -29,9 +29,15 @@ public class _03_FruitBoxEx3 {
 	
 	public static void main(String[] args) {
 		FruitBox<Fruit3> fruitBox = new FruitBox<Fruit3>();
-		// ==> 여기서 부터
+		FruitBox<Apple3> appleBox = new FruitBox<Apple3>();
 		
-		
+		fruitBox.add(new Apple3());
+		fruitBox.add(new Grape3());
+		appleBox.add(new Apple3());
+		appleBox.add(new Apple3());
+	
+		System.out.println(Juicer.makeJuice(fruitBox));
+		System.out.println(Juicer.makeJuice(appleBox));
 	} // main
 }
 
