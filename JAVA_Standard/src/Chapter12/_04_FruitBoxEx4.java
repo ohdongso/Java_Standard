@@ -49,13 +49,18 @@ public class _04_FruitBoxEx4 {
 	
 	public static void main(String[] args) {
 		
+		FruitBox2<Apple4> appleBox = new FruitBox2<Apple4>();
+		FruitBox2<Grape4> grapeBox = new FruitBox2<Grape4>();
 		
+		appleBox.add(new Apple4("GreenApple", 300));
+		appleBox.add(new Apple4("GreenApple", 100));
+		appleBox.add(new Apple4("GreenApple", 200));
 		
+		grapeBox.add(new Grape4("GreenGrape", 400));
+		grapeBox.add(new Grape4("GreenGrape", 300));
+		grapeBox.add(new Grape4("GreenGrape", 200));
 		
-		
-		
-		
-		
+		// ==> 여기서 부터
 		
 	} // main
 }
