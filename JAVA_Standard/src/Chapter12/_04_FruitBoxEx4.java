@@ -1,6 +1,7 @@
 package Chapter12;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 
 class Fruit2 {
@@ -41,7 +42,7 @@ class GrapeComp implements Comparator<Grape4> {
 
 class FruitComp implements Comparator<Fruit2> {
 	public int compare(Fruit2 t1, Fruit2 t2) {
-		return t2.weight - t2.weight;
+		return t1.weight - t2.weight;
 	}
 }
 
@@ -60,12 +61,19 @@ public class _04_FruitBoxEx4 {
 		grapeBox.add(new Grape4("GreenGrape", 300));
 		grapeBox.add(new Grape4("GreenGrape", 200));
 		
-		// ==> 여기서 부터
-		
+		Collections.sort(appleBox.getList(), new AppleComp());
+		Collections.sort(grapeBox.getList(), new GrapeComp());
+		System.out.println(appleBox);
+		System.out.println(grapeBox);
+		System.out.println();
+		Collections.sort(appleBox.getList(), new FruitComp());
+		Collections.sort(grapeBox.getList(), new FruitComp());
+		System.out.println(appleBox);
+		System.out.println(grapeBox);
 	} // main
 }
 
-class FruitBox2<T extends Fruit2> extends Box<T> {}
+class FruitBox2<T extends Fruit2> extends Box3<T> {}
 
 class Box3<T> {
 	ArrayList<T> list = new ArrayList<T>();
