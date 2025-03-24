@@ -17,6 +17,13 @@ public class _05_EnumEx1 {
 		System.out.println("d1==d2 ? " + (d1 == d2));
 		System.out.println("d1==d3 ? " + (d1 == d3));
 		System.out.println("d1.equals(d3) ? " + d1.equals(d3));
+		System.out.println("d1.compareTo(d3) ? " + (d1.compareTo(d3)));
+		System.out.println("d1.compareTo(d2) ? " + (d1.compareTo(d2)));
+		
+		switch(d1) {
+			// 여기서부터
+		}
+		
 		
 	} // main
 }
