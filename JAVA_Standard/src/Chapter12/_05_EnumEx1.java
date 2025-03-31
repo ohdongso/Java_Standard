@@ -21,9 +21,23 @@ public class _05_EnumEx1 {
 		System.out.println("d1.compareTo(d2) ? " + (d1.compareTo(d2)));
 		
 		switch(d1) {
-			// 여기서부터
+		case EAST: // Direction.EAST라고 쓸 수 없다.
+			System.out.println("The direction is EAST."); break;
+		case SOUTH:
+			System.out.println("The direction is SOUTH."); break;
+		case WEST:
+			System.out.println("The direction is WEST."); break;
+		case NORTH:
+			System.out.println("The direction is NORTH."); break;
+		default:
+			System.out.println("Invalid direction."); break;
 		}
 		
+		Direction[] dArr = Direction.values();
+		
+		for(Direction d : dArr) {
+			System.out.printf("%s=%d%n", d.name(), d.ordinal());
+		}
 		
 	} // main
 }
