@@ -22,13 +22,27 @@ enum Direction1 {
 		return DIR_ARR[dir - 1];
 	}
 	
-	// 방향을 ==> 여기서 부터
+	// 방향을 회전시키는 메서드. num의 값만큼 90도씩 시계방향으로 회전한다.
+	public Direction1 rotate(int num) {
+		num = num % 4;
+		
+		if(num < 0) {
+			num += 4; // num이 음수일 때는 시계반대 방향으로 회전
+		}
+		
+		return DIR_ARR[(value - 1 + num) % 4];
+	}
+	
+	public String toString() {
+		return name() + getSymbol();
+	}
 }
 
 public class _06_EnumEx2 {
 	
 	public static void main(String[] args) {
 		
+		// ==> 여기서 부터
 		
 		
 	} // main
