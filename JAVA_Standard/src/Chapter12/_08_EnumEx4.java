@@ -26,6 +26,10 @@ abstract class MyTransportation extends MyEnum {
 		int fare(int distance) { return distance * BASIC_FARE; }
 	};
 	
+	static final MyTransportation SHIP = new MyTransportation("SHIP", 100) {
+		int fare(int distance) { return distance * BASIC_FARE; }
+	};
+	
 	static final MyTransportation AIRPLANE = new MyTransportation("AIRPLANE", 300) {
 		int fare(int distance) { return distance * BASIC_FARE; }
 	};
@@ -46,8 +50,24 @@ abstract class MyTransportation extends MyEnum {
 public class _08_EnumEx4 {
 	
 	public static void main(String[] args) {
+		MyTransportation t1 = MyTransportation.BUS;
+		MyTransportation t2 = MyTransportation.BUS;
+		MyTransportation t3 = MyTransportation.TRAIN;
+		MyTransportation t4 = MyTransportation.SHIP;
+		MyTransportation t5 = MyTransportation.AIRPLANE;
 		
-		// ==> 여기서 부터
-		
+		System.out.printf("t1=%s, %d%n", t1.name(), t1.ordinal());
+		System.out.printf("t2=%s, %d%n", t2.name(), t2.ordinal());
+		System.out.printf("t3=%s, %d%n", t3.name(), t3.ordinal());
+		System.out.printf("t4=%s, %d%n", t4.name(), t4.ordinal());
+		System.out.printf("t5=%s, %d%n", t5.name(), t5.ordinal());
+		System.out.println("t1==t2 ? " + (t1==t2));
+		System.out.println("t1.compareTo(t3)=" + t1.compareTo(t3));
 	}
 }
+
+
+
+
+
+
